@@ -1,16 +1,18 @@
+
 import 'package:flutter/material.dart';
 
-class MyTextField extends StatelessWidget {
+class MyTextFieldEmail extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final controller;
   final String hintText;
   final bool obscureText;
 
-  const MyTextField({
+  const MyTextFieldEmail({
     super.key,
     required this.controller,
     required this.hintText,
-    required this.obscureText,
+    required this.obscureText, 
+     
   });
 
   @override
@@ -21,7 +23,10 @@ class MyTextField extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-            
+          prefixIcon: const Icon(
+                      Icons.mail,
+                      color: Colors.grey,
+                    ),
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
             ),
@@ -31,7 +36,8 @@ class MyTextField extends StatelessWidget {
             fillColor: Colors.grey.shade200,
             filled: true,
             hintText: hintText,
-            hintStyle: TextStyle(color: Colors.grey[500])),
+            hintStyle: TextStyle(color: Colors.orange.shade300)),
+            
       ),
     );
   }

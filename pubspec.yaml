@@ -40,7 +40,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  dio: ^5.3.0
+  http: ^1.1.0
+  html: ^0.15.4  
+  postgres: ^2.6.1
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -64,5 +67,10 @@ flutter:
   - assets/pdf/
   - assets/text/
   - assets/video/
+
+  fonts:
+    - family: OpenSans
+      fonts:
+      - asset: assets/fonts/OpenSans.ttf
   
  

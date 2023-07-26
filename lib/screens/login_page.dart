@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kbook/components/signin_button.dart';
-import 'package:kbook/components/my_textfield.dart';
+import 'package:kbook/components/my_textfield_password.dart';
+import 'package:kbook/components/my_textfield_email.dart';
 import 'package:kbook/components/square_tile.dart';
 import 'package:kbook/screens/home.dart';
 import 'package:kbook/screens/sign_up.dart';
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -23,6 +25,7 @@ class LoginPageScreen extends StatelessWidget {
   void signUserIn() {}
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+   final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +35,8 @@ class LoginPageScreen extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 50),
+            children: <Widget> [
+              const SizedBox(height: 90),
 
               // logo
               const Row(
@@ -41,13 +44,13 @@ class LoginPageScreen extends StatelessWidget {
                   Expanded(
                     child: Image(
                       image: AssetImage('assets/img/LOGOKBOOK.png'),
-                      height: 100,
+                      height: 70,
                     ),
                   ),
                 ],
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
 
               // welcome back, you've been missed!
               Text(
@@ -58,25 +61,30 @@ class LoginPageScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 25),
-
-              // username textfield
-              MyTextField(                
-                controller: usernameController,             
-                hintText: 'Username',
-                obscureText: false,
-              ),
-
-              const SizedBox(height: 10),
+             const SizedBox(height: 20),
 
               // password textfield
-              MyTextField(
-                controller: passwordController,
+              MyTextFieldEmail(
+                controller: emailController,                
+                hintText: 'Email',
+                obscureText: true,
+                
+              ),
+              
+              
+              
+
+              const SizedBox(height: 20),
+
+              // password textfield
+              MyTextFieldPassword(
+                controller: passwordController,                
                 hintText: 'Password',
                 obscureText: true,
+                
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               // forgot password?
               Padding(
@@ -92,7 +100,7 @@ class LoginPageScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 20),
 
               // sign in button
               SignInButton(
@@ -102,7 +110,7 @@ class LoginPageScreen extends StatelessWidget {
                   },
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
 
               // or continue with
               Padding(
@@ -132,7 +140,7 @@ class LoginPageScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
 
               // google + apple sign in buttons
               // ignore: prefer_const_constructors
@@ -142,14 +150,14 @@ class LoginPageScreen extends StatelessWidget {
                   // google button
                   SquareTile(imagePath: 'assets/img/google.png'),
 
-                  SizedBox(width: 25),
+                  SizedBox(width: 20),
 
                   // apple button
                   SquareTile(imagePath: 'assets/img/apple.png')
                 ],
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
 
               // not a member? register now
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -177,3 +185,5 @@ class LoginPageScreen extends StatelessWidget {
     );
   }
 }
+
+

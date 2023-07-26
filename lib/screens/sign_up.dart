@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kbook/components/signup_button.dart';
 import 'package:kbook/screens/login_page.dart';
-import '../components/my_textfield.dart';
+import '../components/my_textfield_password.dart';
+import '../components/my_textfield_email.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -36,22 +37,23 @@ void signUserUp() {}
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 50),
-               MyTextField(
-                controller: usernameController,                
-                hintText: 'Enter Username',
-                obscureText: false,
+              MyTextFieldEmail(
+                controller: emailController,                
+                hintText: 'Enter Email',
+                obscureText: true,
+                
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               // password textfield
-              MyTextField(
+              MyTextFieldPassword(
                 controller: emailController,
-                hintText: 'Enter Email',                
+                hintText: 'Enter Password',                
                 obscureText: true,
               ),
-
-               MyTextField(
+              const SizedBox(height: 20),
+               MyTextFieldPassword(                
                 controller: passwordController,
                 hintText: 'Enter Password',                
                 obscureText: true,
